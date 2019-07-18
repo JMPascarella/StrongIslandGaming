@@ -119,6 +119,10 @@ div#indexMainContent > div {
     text-align: center;
 }
 
+div.smallText {
+    display: none;
+}
+
 div#newArrivals {
     display: -webkit-flex;
     display: flex;
@@ -393,29 +397,39 @@ div#customerReviews {
 
 /* Footer Styles */
 
-footer {
+footer > div#footerLinks {
     display: -webkit-flex;
     display: flex;
-    -webkit-flex-flow: row wrap;
-    flex-flow: row wrap;
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
 }
 
-footer > a {
+div#footerImage {
+    display: none;
+    
+}
+
+div#footerLinks > a {
     flex: 1 1 33.33%;
     text-decoration: none;
     color: black;
-    font-size: 35px;
+    font-size: 33px;
     text-align: center;
     padding-top: 15px;
     padding-bottom: 15px; 
     font-family: 'Sniglet', cursive;
+    margin: auto;
 }
 
-footer > a > img {
+div#footerLinks > a > img {
     display: none;
     position: absolute;
+}
+
+img#footerBat1 {
+    left: 185px;
 }
 
 img#footerBat2 {
@@ -426,8 +440,12 @@ img#footerBat3 {
     right: 690px;
 }
 
-footer > a:hover {
-    font-size: 40px;
+div#footerLinks > a:hover {
+    font-size: 35px;
+}
+
+div#footerLinks > a:hover img {
+    display: none;
 }
 
 
@@ -435,7 +453,7 @@ footer > a:hover {
 
 @media only screen and (min-width: 1700px) {
 
-        div#heroImage {
+    div#heroImage {
         background-image: url(images/superhero.jpg);
         background-size: cover;
         height: 550px;
@@ -446,30 +464,60 @@ footer > a:hover {
         text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
     }
 
-        div#navigation > ul > li:hover img {
+    div#navigation > ul > li:hover img {
         display: block;
     }
-    
-        footer > a:hover > img[id^="footer"] {
+
+    div#footerLinks > a:hover img {
         display: block;
+    }
+}
+
+@media only screen and (min-width: 1001px) {
+
+    div#footerImage {
+        display: none;
+    }
+
+    div#footerLinks > a {
+        flex: 1 1 30%;
+        -webkit-box-flex: 1 1 30%;
+        font-size: 25px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+        
+    div.newArrivalDescription {
+        display: none;
+    }
+
+    div.smallText {
+        display: block;
+        font-size: 35px;
+        font-family: 'Gudea', sans-serif;
+        padding-top: 25px;
+
     }    
+    
+    div#footerLinks {
+        display: none;
+    }
+
+    div#footerImage {
+        display: block;
+    }
+
+    div#footerImage > a {
+        flex: 1 1 30%;
+        -webkit-box-flex: 1 1 30%;
+        margin-right: 35px;
+    }
 }
 
 @media only screen and (max-width: 600px) {
 
-    string#fullText {
-        display: none;
-    }
-
     string#acronym {
         display: block;
-    }
-
-    footer > img[id^="mini"] {
-        display: block;
-    }
-
-    span.footer {
-        display: none;
     }
 }
