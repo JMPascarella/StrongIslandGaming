@@ -34,8 +34,6 @@ function lightStars(e) {
         document.querySelectorAll("span#stars img")[i].src = "images/bw_star.png";
     }
 
-    document.getElementById("rating").value = starNumber + " stars";
-
     //Turns off the lit up stars once the user moves their mouse off the stars (without having clicked on one)
     for (var i = 0; i < document.querySelectorAll("span#stars img").length; i++) {
         document.querySelectorAll("span#stars img")[i].addEventListener("mouseleave", turnOffStars);
@@ -57,7 +55,6 @@ function turnOffStars() {
 
     for (var i = 0; i < stars.length; i++) {
         document.querySelectorAll("span#stars img")[i].src = "images/bw_star.png";
-        document.getElementById("rating").value = "";
     }
 }
 
